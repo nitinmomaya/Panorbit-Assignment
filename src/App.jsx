@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Profile from "./src/pages/Profile";
-import UserList from "./src/components/UserList";
+import Profile from "./pages/Profile";
+import UserList from "./components/UserList";
 
 const App = () => {
   return (
