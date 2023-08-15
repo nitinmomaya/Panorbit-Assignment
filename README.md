@@ -13,6 +13,10 @@ First Clone the reporistory
   git clone https://github.com/nitinmomaya/Panorbit-Assignment.git
 ```
 
+```bash
+ cd Panorbit-Assignment
+```
+
 Run the command in this sequence
 
 ```bash
