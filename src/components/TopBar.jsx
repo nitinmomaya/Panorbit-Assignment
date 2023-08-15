@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProfileMenuDropdown from "../ProfileDropdownModal/ProfileMenuDropdown";
+import ProfileMenuDropdown from "../components/ProfileDropdownModal/ProfileMenuDropdown";
 import { useSelector } from "react-redux";
 
 const TopBar = ({ header }) => {
