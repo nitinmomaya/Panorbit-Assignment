@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   chatState: false,
-  openState: false,
+  openState: true,
 };
 
 export const chatStateSlice = createSlice({

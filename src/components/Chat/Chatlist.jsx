@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FiChevronDown, FiChevronUp, FiMessageSquare } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { filterChatById } from "../../slices/profileSlice";
-import { setChatState } from "../../slices/chatStateSlice";
+import { setChatState, setOpenState } from "../../slices/chatStateSlice";
 const ChatList = () => {
   const [active, setActive] = useState(false);
 
@@ -15,12 +15,13 @@ const ChatList = () => {
   const handleChat = (id) => {
     dispatch(filterChatById(id));
     dispatch(setChatState(true));
+    dispatch(setOpenState(true));
     console.log("active hua", chatState, id);
   };
 
   return (
     <>
-      <div className="flex flex-col w-80 h-auto rounded-xl  bg-white cursor-pointer">
+      <div className="flex flex-col w-60 h-auto rounded-xl  bg-white cursor-pointer">
         <div
           onClick={() => {
             handleState();
@@ -29,7 +30,7 @@ const ChatList = () => {
         >
           <div className="flex gap-2 items-center ">
             <FiMessageSquare className="-rotate-360 w-6 h-6 text-white" />
-            <h1 className="text-white text-lg">Chats</h1>
+            <h1 className="text-white ">Chats</h1>
           </div>
           <div className="text-white flex ">
             {active ? (

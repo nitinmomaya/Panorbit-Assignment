@@ -8,21 +8,21 @@ import { setChatData, setData } from "./slices/profileSlice";
 
 const App = () => {
   const [users, setUser] = useState([]);
-  // const { dispatch } = useUserContext();
+
   const dispatch = useDispatch();
   const getUser = async () => {
     const data = await fetchUser();
     setUser(data);
     dispatch(setData(data));
     dispatch(setChatData(data));
-    // dispatch({ type: "SET_DATA", payload: data });
   };
   useEffect(() => {
     getUser();
   }, []);
   return (
-    <div className="font-display w-screen flex items-center justify-center h-screen">
-      <UserList users={users} />
+    <div className="font-display w-screen flex flex-col items-center justify-center  h-screen ">
+      <div className="w-full bg-img h-[100%] bg-cover relative">sss</div>
+      <UserList className="absolute" users={users} />
     </div>
   );
 };

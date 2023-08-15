@@ -21,3 +21,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #e3e3e3;
 }
+
+.custom-gradient {
+  background: linear-gradient(179deg, #3e5ac4 0%, #5547c4 100%);
+}

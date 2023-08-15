@@ -8,6 +8,13 @@ const SendMessageForm = ({ onSendMessage }) => {
     setMessage(event.target.value);
   };
 
+  const handleKeyEnter = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleSendMessage();
+    }
+  };
+
   const handleSendMessage = () => {
     if (message.trim() !== "") {
       onSendMessage(message);
@@ -22,6 +29,7 @@ const SendMessageForm = ({ onSendMessage }) => {
         type="text"
         value={message}
         onChange={handleMessageChange}
+        onKeyDown={handleKeyEnter}
       />
       <button
         className=" text-blue-500  font-bold text-xl h-full px-2  absolute right-0"

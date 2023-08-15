@@ -18,9 +18,9 @@ const ChatHeader = () => {
   return (
     <>
       <div className="header flex gap-2 justify-between w-full bg-blue-600  p-4 rounded-t-lg">
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <img
-            className="w-6 h-6 rounded-full"
+            className="w-8 h-8 rounded-full"
             src={filteredChatData[0]?.profilepicture}
           />
           <h1 className="text-white">{filteredChatData[0]?.name}</h1>

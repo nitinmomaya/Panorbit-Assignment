@@ -12,7 +12,7 @@ const ChatBox = () => {
   };
 
   return (
-    <div className="bg-white flex flex-col absolute right-96 align-bottom w-96   bottom-0">
+    <div className="bg-white flex flex-col absolute right-96 align-bottom w-72   bottom-0">
       <ChatHeader />
       {openState && <MessageList messages={messages} />}
       {openState && <SendMessageForm onSendMessage={handleSendMessage} />}
