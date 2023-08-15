@@ -7,7 +7,7 @@
 
 # Installation
 
-First Clone the reporistory
+First Clone the repository
 
 ```bash
   git clone https://github.com/nitinmomaya/Panorbit-Assignment.git
