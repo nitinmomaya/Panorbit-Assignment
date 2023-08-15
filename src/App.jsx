@@ -21,7 +21,7 @@ const App = () => {
   }, []);
   return (
     <div className="font-display w-screen flex flex-col items-center justify-center  h-screen ">
-      <div className="w-full bg-img h-[100%] bg-cover relative">sss</div>
+      <div className="w-full bg-img h-[100%] bg-cover relative"></div>
       <UserList className="absolute" users={users} />
     </div>
   );
