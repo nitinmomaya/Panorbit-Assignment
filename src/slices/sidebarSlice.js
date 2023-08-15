@@ -9,7 +9,6 @@ export const sidebarSlice = createSlice({
   initialState,
   reducers: {
     setSideBar: (state, action) => {
-      console.log("action is", action);
       return {
         ...state,
         sidebar: action.payload,

@@ -16,7 +16,6 @@ const ChatList = () => {
     dispatch(filterChatById(id));
     dispatch(setChatState(true));
     dispatch(setOpenState(true));
-    console.log("active hua", chatState, id);
   };
 
   return (

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FiChevronDown, FiChevronUp, FiX } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { setChatState, setOpenState } from "../../slices/chatStateSlice";
@@ -9,8 +8,6 @@ const ChatHeader = () => {
   );
   const dispatch = useDispatch();
   const openState = useSelector((state) => state.chatState.openState);
-  console.log("act", openState);
-  console.log("chat clicked", filteredChatData, filteredChatData[0]?.id);
   const handleState = () => {
     dispatch(setOpenState(!openState));
   };

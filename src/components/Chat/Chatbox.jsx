@@ -21,21 +21,3 @@ const ChatBox = () => {
 };
 
 export default ChatBox;
-
-// import React from "react";
-
-// const Chatbox = () => {
-//   return (
-//     <div>
-//       <div className="header bg-blue-600 w-60 p-2 rounded-t-lg">
-//         <img />
-//         <h1>Full NAme</h1>
-//       </div>
-//       <div className="chatbox">
-
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Chatbox;

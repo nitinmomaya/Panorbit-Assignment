@@ -10,14 +10,12 @@ export const chatStateSlice = createSlice({
   initialState,
   reducers: {
     setChatState: (state, action) => {
-      console.log("action is", action);
       return {
         ...state,
         chatState: action.payload,
       };
     },
     setOpenState: (state, action) => {
-      console.log("action is", action);
       return {
         ...state,
         openState: action.payload,

@@ -11,14 +11,14 @@ const ProfileMenuDropdown = () => {
 
   console.log("userlist from menu", userList, typeof userList);
   return (
-    <div className=" absolute right-0 top-10 w-72 flex flex-col items-center bg-white border-[1px] border-slate-100 p-4 rounded-lg shadow-md z-50">
+    <div className=" absolute right-0 top-10 w-80  flex flex-col items-center bg-white border-[1px] border-slate-100 p-4 rounded-lg shadow-md z-50">
       <img
         src={filteredData[0]?.profilepicture}
         className="w-20 h-20 rounded-full"
       />
       <h1>{filteredData[0]?.name}</h1>
-      <p>{filteredData[0]?.username}</p>
-      <div>
+      <p className="text-slate-400">{filteredData[0]?.username}</p>
+      <div className="border-t border-slate-300 my-1">
         <ProfileList userList={userList} />
       </div>
       <Link to="/">

@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 const ProfileList = ({ userList }) => {
   return (
     <>
-      <div className="flex flex-col h-60 overflow-x-hidden my-2 ">
+      <div className="flex flex-col h-40 overflow-x-hidden my-2 bg-white">
         {userList.map((user) => (
           <Link
             key={user.id}
             to={`/profile/${user.id}`}
-            className="flex gap-2 items-center p-3 border-b border-slate-100"
+            className="flex gap-2 items-center p-2 border-b border-slate-300"
           >
             <img
               src={user.profilepicture}
