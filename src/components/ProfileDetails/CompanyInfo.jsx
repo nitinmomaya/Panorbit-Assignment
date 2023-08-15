@@ -1,4 +1,5 @@
-const CompanyInfo = ({ filteredData }) => {
+const CompanyInfo = ({ ComapanyInfo }) => {
+  console.log("com", CompanyInfo);
   return (
     <>
       <div className=" flex flex-col justify-center items-center gap-2 pt-4">
@@ -11,13 +12,13 @@ const CompanyInfo = ({ filteredData }) => {
           </ul>
           <ul className="flex w-full flex-col  gap-2">
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.company?.name}
+              {ComapanyInfo[0]?.company?.name}
             </li>
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.company?.catchPhrase}
+              {ComapanyInfo[0]?.company?.catchPhrase}
             </li>
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.company?.bs}
+              {ComapanyInfo[0]?.company?.bs}
             </li>
           </ul>
         </div>

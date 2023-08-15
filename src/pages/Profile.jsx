@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import SideBar from "../components/Sidebar/SideBar";
 import UserDetails from "../components/UserDetails";
 import TopBar from "../components/TopBar";
@@ -14,16 +14,23 @@ import {
 } from "../slices/profileSlice";
 
 const Profile = () => {
-  const filteredData = useSelector((state) => state.profile.filteredData);
-  const sidebar = useSelector((state) => state.sidebar.sidebar);
-  const val = useSelector((state) => state);
+  const filteredUserList = useSelector(
+    (state) => state.profile.filteredUserList
+  );
+  // to renderdata according to sidebar state
+  const sidebar = useSelector((state) => state.sidebar.sidebarState);
   const dispatch = useDispatch();
 
-  console.log("val is", val);
+  //getting the id from react-router
   const params = useParams();
-  const active = useSelector((state) => state.chatState.chatState);
+  //destructuring id
   const { id } = params;
+  //converting id to number to help in filtering the data
   let userId = +id;
+
+  //to check if anyone chat is open, by default no chat will be shown
+  const active = useSelector((state) => state.chatState.chatState);
+
   useEffect(() => {
     // Filter data by ID when the component mounts or the ID changes
     dispatch(filterUserById(userId));
@@ -37,7 +44,7 @@ const Profile = () => {
       <div className="flex w-full  flex-col mx-10">
         <TopBar header={sidebar} />
         {sidebar === "Profile" ? (
-          <UserDetails filteredData={filteredData} />
+          <UserDetails filteredUserList={filteredUserList} />
         ) : (
           <Error />
         )}

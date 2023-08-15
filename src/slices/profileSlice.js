@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: [],
-  filteredData: [],
-  //   sidebar: "Profile",
-  chatData: [],
-  filteredChatData: [],
+  userList: [],
+  filteredUserList: [],
+  chatList: [],
+  filterChatList: [],
 };
 
 export const profileSlice = createSlice({
@@ -15,33 +14,35 @@ export const profileSlice = createSlice({
     setData: (state, action) => {
       return {
         ...state,
-        data: action.payload,
-        filteredData: action.payload,
-        chatData: action.payload, // Initialize filteredData with all data initially
+        userList: action.payload,
+        filteredUserList: action.payload,
+        chatList: action.payload, // Initialize filteredUserList with all data initially
       };
     },
     filterUserById: (state, action) => {
-      const filtered = state.data.filter((item) => item.id === action.payload);
-      return {
-        ...state,
-        filteredData: filtered,
-      };
-    },
-    setChatData: (state, action) => {
-      console.log("state", state, "action", action);
-      const chat = state.data.filter((item) => item.id !== action.payload);
-      return {
-        ...state,
-        chatData: chat,
-      };
-    },
-    filterChatById: (state, action) => {
-      const filteredChat = state.data.filter(
+      const filtered = state.userList.filter(
         (item) => item.id === action.payload
       );
       return {
         ...state,
-        filteredChatData: filteredChat,
+        filteredUserList: filtered,
+      };
+    },
+    setChatData: (state, action) => {
+      console.log("state", state, "action", action);
+      const chat = state.userList.filter((item) => item.id !== action.payload);
+      return {
+        ...state,
+        chatList: chat,
+      };
+    },
+    filterChatById: (state, action) => {
+      const filteredChat = state.userList.filter(
+        (item) => item.id === action.payload
+      );
+      return {
+        ...state,
+        filterChatList: filteredChat,
       };
     },
   },

@@ -10,7 +10,7 @@ const ChatList = () => {
   const handleState = () => {
     setActive(!active);
   };
-  const chatData = useSelector((state) => state.profile.chatData);
+  const chatList = useSelector((state) => state.profile.chatList);
   const chatState = useSelector((state) => state.chatState.chatState);
   const handleChat = (id) => {
     dispatch(filterChatById(id));
@@ -46,17 +46,26 @@ const ChatList = () => {
               : `hidden`
           }
         >
-          {chatData.map((user) => (
+          {chatList.map((user) => (
             <div
-              className="flex gap-2 items-center p-2 mx-2 border-b   border-b-slate-100"
+              className="flex gap-2 items-center p-2 mx-2 border-b justify-between  border-b-slate-100"
               key={user.id}
               onClick={() => handleChat(user?.id)}
             >
-              <img
-                className="w-8 h-8 rounded-full"
-                src={user?.profilepicture}
-              />
-              <h1>{user?.name}</h1>
+              <div className="flex gap-2 items-center">
+                <img
+                  className="w-8 h-8 rounded-full"
+                  src={user?.profilepicture}
+                />
+                <h1>{user?.name}</h1>
+              </div>
+              <div
+                className={
+                  chatState
+                    ? "w-2 h-2 bg-green-600 rounded-full"
+                    : "w-2 h-2 bg-slate-400 rounded-full"
+                }
+              ></div>
             </div>
           ))}
         </div>

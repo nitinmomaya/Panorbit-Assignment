@@ -1,4 +1,4 @@
-const UserInfo = ({ filteredData }) => {
+const UserInfo = ({ UserInfo }) => {
   return (
     <>
       <div>
@@ -6,12 +6,10 @@ const UserInfo = ({ filteredData }) => {
         <div className="flex flex-col items-center justify-center ">
           <img
             className="w-36 h-36 rounded-full"
-            src={filteredData[0]?.profilepicture}
+            src={UserInfo[0]?.profilepicture}
             alt=""
           />
-          <h1 className="font-semibold text-slate-900">
-            {filteredData[0]?.name}
-          </h1>
+          <h1 className="font-semibold text-slate-900">{UserInfo[0]?.name}</h1>
         </div>
         {/* User Details */}
         <div className="flex  py-4 mx-8 border-b-[1px] border-gray-300 ">
@@ -23,16 +21,16 @@ const UserInfo = ({ filteredData }) => {
           </ul>
           <ul className="flex  flex-col  gap-2">
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.username}
+              {UserInfo[0]?.username}
             </li>
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.email}
+              {UserInfo[0]?.email}
             </li>
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.phone}
+              {UserInfo[0]?.phone}
             </li>
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.website}
+              {UserInfo[0]?.website}
             </li>
           </ul>
         </div>

@@ -3,13 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { setChatState, setOpenState } from "../../slices/chatStateSlice";
 
 const ChatHeader = () => {
-  const filteredChatData = useSelector(
-    (state) => state.profile.filteredChatData
-  );
+  const chatUser = useSelector((state) => state.profile.filterChatList);
   const dispatch = useDispatch();
-  const openState = useSelector((state) => state.chatState.openState);
+  const open = useSelector((state) => state.chatState.open);
   const handleState = () => {
-    dispatch(setOpenState(!openState));
+    dispatch(setOpenState(!open));
   };
 
   return (
@@ -18,9 +16,9 @@ const ChatHeader = () => {
         <div className="flex gap-2 items-center">
           <img
             className="w-8 h-8 rounded-full"
-            src={filteredChatData[0]?.profilepicture}
+            src={chatUser[0]?.profilepicture}
           />
-          <h1 className="text-white">{filteredChatData[0]?.name}</h1>
+          <h1 className="text-white">{chatUser[0]?.name}</h1>
         </div>
         <div
           onClick={() => {
@@ -28,7 +26,7 @@ const ChatHeader = () => {
           }}
           className="flex gap-3"
         >
-          {openState ? (
+          {open ? (
             <FiChevronUp className="w-6 h-6 text-white" />
           ) : (
             <FiChevronDown className="w-6 h-6 text-white" />

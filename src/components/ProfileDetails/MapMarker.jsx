@@ -12,14 +12,15 @@ const MapMarker = () => {
 };
 
 const Map = () => {
-  const filteredData = useSelector((state) => state.profile.filteredData);
-  const lat = +filteredData[0]?.address?.geo?.lat;
-  const lng = +filteredData[0]?.address?.geo?.lng;
+  const userData = useSelector((state) => state.profile.filteredUserList);
+  //converting values to number to pass lat,lng values in Google Map
+  const lat = +userData[0]?.address?.geo?.lat;
+  const lng = +userData[0]?.address?.geo?.lng;
   const center = {
     lat: lat,
     lng: lng,
   };
-  console.log("center", center);
+
   return (
     <GoogleMap
       zoom={2}

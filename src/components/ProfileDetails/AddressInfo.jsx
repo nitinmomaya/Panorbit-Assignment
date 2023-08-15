@@ -1,5 +1,5 @@
 import MapMarker from "./MapMarker";
-const AddressInfo = ({ filteredData }) => {
+const AddressInfo = ({ AddressInfo }) => {
   return (
     <>
       <div className="w-full flex flex-col ">
@@ -13,16 +13,16 @@ const AddressInfo = ({ filteredData }) => {
           </ul>
           <ul className="flex flex-col gap-2">
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.address?.street}
+              {AddressInfo[0]?.address?.street}
             </li>
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.address?.suite}
+              {AddressInfo[0]?.address?.suite}
             </li>
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.address?.city}
+              {AddressInfo[0]?.address?.city}
             </li>
             <li className="pl-4 text-slate-600 font-bold">
-              {filteredData[0]?.address?.zipcode}
+              {AddressInfo[0]?.address?.zipcode}
             </li>
           </ul>
         </div>
@@ -33,13 +33,13 @@ const AddressInfo = ({ filteredData }) => {
           <div className="flex gap-2">
             <h1 className="text-gray-400 text-sm">Lat:</h1>
             <h1 className="text-slate-900 font-semibold text-sm">
-              {filteredData[0]?.address?.geo?.lat}
+              {AddressInfo[0]?.address?.geo?.lat}
             </h1>
           </div>
           <div className="flex gap-2">
             <h1 className="text-gray-400 text-sm">Long:</h1>
             <h1 className="text-slate-900 font-semibold text-sm">
-              {filteredData[0]?.address?.geo?.lng}
+              {AddressInfo[0]?.address?.geo?.lng}
             </h1>
           </div>
         </div>

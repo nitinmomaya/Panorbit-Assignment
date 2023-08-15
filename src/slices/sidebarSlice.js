@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  sidebar: "Profile",
+  sidebarState: "Profile",
 };
 
 export const sidebarSlice = createSlice({
@@ -11,7 +11,7 @@ export const sidebarSlice = createSlice({
     setSideBar: (state, action) => {
       return {
         ...state,
-        sidebar: action.payload,
+        sidebarState: action.payload,
       };
     },
   },

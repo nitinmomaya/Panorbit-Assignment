@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   chatState: false,
-  openState: true,
+  open: true,
 };
 
 export const chatStateSlice = createSlice({
@@ -18,7 +18,7 @@ export const chatStateSlice = createSlice({
     setOpenState: (state, action) => {
       return {
         ...state,
-        openState: action.payload,
+        open: action.payload,
       };
     },
   },
