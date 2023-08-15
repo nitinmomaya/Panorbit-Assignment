@@ -2,8 +2,8 @@
 
 # Tech Stack
 
-Client: React,TailwindCSS, Parcel, GoogleMaps
-Other Dependency/Library Used: Axios, Redux-toolkit, react-icons, react-router-dom
+**Client:** React,TailwindCSS, Parcel, GoogleMaps
+**Other Dependency/Library Used:** Axios, Redux-toolkit, react-icons, react-router-dom
 
 # Installation
 
